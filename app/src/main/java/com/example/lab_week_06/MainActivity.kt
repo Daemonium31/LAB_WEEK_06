@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private val catAdapter by lazy {
 //Glide is used here to load the images
 //Here we are passing the onClickListener function to the Adapter
-        CatAdapter(layoutInflater, GlideImageLoader(this), object:
+        CatAdapter(layoutInflater,GlideImageLoader(this), object:
             CatAdapter.OnClickListener {
             //When this is triggered, the pop up dialog will be shown
             override fun onItemClick(cat: CatModel) = showSelectionDialog(cat)
@@ -38,29 +38,19 @@ class MainActivity : AppCompatActivity() {
 //Add data to the model list in the adapter
         catAdapter.setData(
             listOf(
-                CatModel(
-                    Gender.Male,
-                    CatBreed.BalineseJavanese,
-                    "Fred",
-                    "Silent and deadly",
-                    "https://cdn2.thecatapi.com/images/7dj.jpg"
-                ),
-                CatModel(
-                    Gender.Female,
-                    CatBreed.ExoticShorthair,
-                    "Wilma",
-                    "Cuddly assassin",
-                    "https://cdn2.thecatapi.com/images/egv.jpg"
-                ),
-                CatModel(
-                    Gender.Unknown,
-                    CatBreed.AmericanCurl,
-                    "Curious George",
-                    "Award winning investigator",
-                    "https://cdn2.thecatapi.com/images/bar.jpg"
-                )
+                CatModel(Gender.Male, CatBreed.BalineseJavanese, "Fred", "Silent and deadly", "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Wilma", "Cuddly assassin", "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Unknown, CatBreed.AmericanCurl, "Curious George", "Award winning investigator", "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Female, CatBreed.BalineseJavanese, "Luna", "Loves naps", "https://cdn2.thecatapi.com/images/abc.jpg"),
+                CatModel(Gender.Male, CatBreed.ExoticShorthair, "Milo", "Playful kitty", "https://cdn2.thecatapi.com/images/def.jpg"),
+                CatModel(Gender.Female, CatBreed.AmericanCurl, "Chloe", "Very curious", "https://cdn2.thecatapi.com/images/22d.jpg"),
+                CatModel(Gender.Male, CatBreed.BalineseJavanese, "Leo", "Explorer cat", "https://cdn2.thecatapi.com/images/a9g.jpg"),
+                CatModel(Gender.Female, CatBreed.ExoticShorthair, "Daisy", "Sweet and gentle", "https://cdn2.thecatapi.com/images/MTUwMDE5MA.jpg"),
+                CatModel(Gender.Male, CatBreed.AmericanCurl, "Oliver", "Loves toys", "https://cdn2.thecatapi.com/images/MTk5NTYyNw.jpg"),
+                CatModel(Gender.Female, CatBreed.BalineseJavanese, "Lily", "Very affectionate", "https://cdn2.thecatapi.com/images/MTc1NTY0OQ.jpg")
             )
         )
+
     }
 //This will create a pop up dialog when one of the items from the recycler view is clicked.
     private fun showSelectionDialog(cat: CatModel) {
